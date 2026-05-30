@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio - Jafet Fabian Salinas Alejandro</title>
+    <title>Jafet.Dev // Portafolio Profesional</title>
     
     <style>
-        /* Paleta de Colores Ajustada para Alto Contraste con Verde Neón */
+        /* Paleta de Colores Optimizada con Verde Tecnológico */
         :root {
-            --primary-bg: #0B1B3D;    /* Azul Noche (Fondo base y Header) */
-            --accent-color: #00E676;  /* Verde Neón / Destacados y Botones */
-            --card-bg: #1E293B;       /* Azul Pizarra (Tarjetas y Componentes) */
-            --dark-surface: #111e38;  /* Tono intermedio para reemplazar los fondos claros */
-            --text-light: #F8FAFC;    /* Texto principal (Blanco Grisáceo) */
-            --text-muted: #94A3B8;    /* Texto Secundario (Gris Azulado) */
+            --primary-bg: #0B1B3D;       /* Azul Noche (Fondo base, Presentación y Header) */
+            --accent-color: #00E676;     /* Verde Neón (Destacados y Bordes) */
+            --card-bg: #1E293B;          /* Azul Pizarra (Tarjetas y Componentes) */
+            --tech-green-bg: #0d261a;    /* Verde Oscuro Mate Perfecto para las secciones intermedias */
+            --text-light: #F8FAFC;       /* Texto principal (Blanco Grisáceo) */
+            --text-muted: #94A3B8;       /* Texto Secundario (Gris Azulado) */
         }
 
         * {
@@ -41,13 +41,13 @@
             padding: 40px 0;
         }
 
-        /* Alternancia de fondos oscuros para dar dinamismo sin usar blanco */
+        /* Alternancia de fondos: Azul Noche y Verde Tecnológico */
         .bg-dark-main {
             background-color: var(--primary-bg);
         }
 
-        .bg-dark-surface {
-            background-color: var(--dark-surface);
+        .bg-tech-green {
+            background-color: var(--tech-green-bg);
             border-top: 1px solid rgba(0, 230, 118, 0.1);
             border-bottom: 1px solid rgba(0, 230, 118, 0.1);
         }
@@ -74,7 +74,7 @@
         .subtitle {
             text-align: center;
             margin-bottom: 30px;
-            color: var(--text-muted);
+            color: #cbd5e1;
         }
 
         /* Menú de Navegación */
@@ -125,7 +125,7 @@
 
         /* Sección de Presentación (Hero) */
         .hero-section {
-            background: linear-gradient(135deg, #0B1B3D 0%, #111e38 100%);
+            background: linear-gradient(135deg, #0B1B3D 0%, #0d261a 100%);
             color: var(--text-light);
             text-align: center;
             padding: 100px 20px;
@@ -167,7 +167,7 @@
             color: #cbd5e1;
         }
 
-        /* Grillas y Tarjetas (Azul Pizarra) */
+        /* Grillas y Tarjetas */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -180,19 +180,31 @@
             color: var(--text-light);
             padding: 30px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
             border-top: 4px solid var(--accent-color);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px -3px rgba(0, 230, 118, 0.2);
+            box-shadow: 0 10px 20px -3px rgba(0, 230, 118, 0.3);
         }
 
         .card h3 {
             color: var(--text-light);
             margin-bottom: 10px;
+            font-size: 1.25rem;
+        }
+
+        /* Hipervínculo específico para el título de Pregrado */
+        .card h3 a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .card h3 a:hover {
+            color: var(--accent-color);
         }
 
         .card p {
@@ -211,7 +223,7 @@
             margin-bottom: 15px;
         }
 
-        /* Sección de Compañeros (Botones Interactivos Verde Neón) */
+        /* Sección de Compañeros (Botones en fondo Verde) */
         .grid-links {
             display: flex;
             flex-wrap: wrap;
@@ -221,7 +233,7 @@
         }
 
         .btn-peer {
-            background-color: transparent;
+            background-color: var(--card-bg);
             color: var(--accent-color);
             padding: 15px 25px;
             text-decoration: none;
@@ -229,6 +241,7 @@
             font-weight: 600;
             border: 2px solid var(--accent-color);
             transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
 
         .btn-peer:hover {
@@ -305,7 +318,7 @@
 
     <!-- Encabezado / Barra de Navegación -->
     <header>
-        <div class="logo">Mi <span>Portafolio</span></div>
+        <div class="logo">Jafet.Dev <span>// Portafolio</span></div>
         <nav>
             <ul>
                 <li><a href="#presentacion">Presentación</a></li>
@@ -326,13 +339,13 @@
         </div>
     </section>
 
-    <!-- Sección 2: Formación y Cursos -->
-    <section id="formacion" class="bg-dark-surface">
+    <!-- Sección 2: Formación y Cursos (Fondo Verde Tecnológico) -->
+    <section id="formacion" class="bg-tech-green">
         <div class="container">
             <h2>Formación Académica y Cursos</h2>
             <div class="grid">
                 <div class="card">
-                    <h3>Pregrado en Ciencia de la Computación</h3>
+                    <h3><a href="https://dc.ucsp.edu.pe/" target="_blank">Pregrado en Ciencia de la Computación 🔗</a></h3>
                     <p><strong>Institución:</strong> Universidad Católica San Pablo</p>
                     <p>Elegi esta carrera porque siempre me llamo el enfoque en la programación, creación de juegos, ver lo que hay detras de tantos años de cambio en la tecnologia y poder innovar en lo que me permita la carrera.</p>
                 </div>
@@ -365,8 +378,8 @@
         </div>
     </section>
 
-    <!-- Sección 4: Páginas de Compañeros -->
-    <section id="companeros" class="bg-dark-surface">
+    <!-- Sección 4: Páginas de Compañeros (Fondo Verde Tecnológico) -->
+    <section id="companeros" class="bg-tech-green">
         <div class="container">
             <h2>Mis Compañeros de Clase</h2>
             <p class="subtitle">Visita los portafolios y proyectos de mis colegas de la universidad:</p>
