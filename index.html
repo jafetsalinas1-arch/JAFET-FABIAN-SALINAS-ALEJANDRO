@@ -6,13 +6,15 @@
     <title>Portafolio - Jafet Fabian Salinas Alejandro</title>
     
     <style>
-        /* Variables de Color y Estilos Globales */
+        /* Nueva Paleta de Colores Aplicada */
         :root {
-            --primary-color: #1e293b; /* Azul oscuro elegante */
-            --accent-color: #3b82f6;  /* Azul brillante */
-            --text-color: #334155;    /* Gris oscuro para lectura */
-            --bg-light: #f8fafc;      /* Fondo claro */
-            --white: #ffffff;
+            --primary-bg: #0B1B3D;    /* Azul Noche (Fondo principal/Header) */
+            --accent-color: #00E676;  /* Verde Neón / Verde de Acento */
+            --card-bg: #1E293B;       /* Azul Pizarra (Tarjetas/Componentes) */
+            --light-bg: #F8FAFC;      /* Fondo Claro (Blanco Grisáceo) */
+            --text-main: #0B1B3D;     /* Texto principal en zonas claras */
+            --text-light: #F8FAFC;    /* Texto blanco en zonas oscuras */
+            --text-muted: #94A3B8;    /* Texto Secundario (Gris Azulado) */
         }
 
         * {
@@ -20,13 +22,13 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en el menú */
+            scroll-behavior: smooth;
         }
 
         body {
-            color: var(--text-color);
+            color: var(--text-main);
             line-height: 1.6;
-            background-color: var(--white);
+            background-color: var(--light-bg);
         }
 
         /* Contenedores Genéricos */
@@ -40,17 +42,26 @@
             padding: 40px 0;
         }
 
-        .bg-light {
-            background-color: var(--bg-light);
+        .bg-dark-section {
+            background-color: var(--primary-bg);
+            color: var(--text-light);
+        }
+
+        .bg-light-section {
+            background-color: var(--light-bg);
+            color: var(--text-main);
         }
 
         h2 {
             font-size: 2rem;
-            color: var(--primary-color);
             margin-bottom: 20px;
             text-align: center;
             position: relative;
         }
+
+        /* Línea decorativa debajo de los títulos h2 */
+        .bg-light-section h2 { color: var(--primary-bg); }
+        .bg-dark-section h2 { color: var(--text-light); }
 
         h2::after {
             content: '';
@@ -65,13 +76,13 @@
         .subtitle {
             text-align: center;
             margin-bottom: 30px;
-            color: #64748b;
+            color: var(--text-muted);
         }
 
         /* Menú de Navegación */
         header {
-            background-color: var(--primary-color);
-            color: var(--white);
+            background-color: var(--primary-bg);
+            color: var(--text-light);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -79,13 +90,18 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-bottom: 2px solid var(--card-bg);
         }
 
         header .logo {
             font-size: 1.4rem;
             font-weight: bold;
             letter-spacing: 1px;
+            color: var(--text-light);
+        }
+
+        header .logo span {
+            color: var(--accent-color);
         }
 
         nav ul {
@@ -98,20 +114,20 @@
         }
 
         nav ul li a {
-            color: #cbd5e1;
+            color: var(--text-muted);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
         }
 
         nav ul li a:hover {
-            color: var(--white);
+            color: var(--accent-color);
         }
 
         /* Sección de Presentación (Hero) */
         .hero-section {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: var(--white);
+            background: linear-gradient(135deg, #0B1B3D 0%, #1E293b 100%);
+            color: var(--text-light);
             text-align: center;
             padding: 100px 20px;
         }
@@ -119,11 +135,12 @@
         .hero-section h1 {
             font-size: 2.8rem;
             margin-bottom: 10px;
+            color: var(--text-light);
         }
 
         .hero-section h2.career {
             font-size: 1.5rem;
-            color: #94a3b8;
+            color: var(--text-muted);
             margin-bottom: 25px;
             font-weight: 400;
         }
@@ -136,12 +153,12 @@
             color: var(--accent-color);
             text-decoration: none;
             font-weight: 600;
-            transition: color 0.3s;
+            transition: opacity 0.3s;
         }
 
         .hero-section h2.career a:hover {
             text-decoration: underline;
-            color: #60a5fa;
+            opacity: 0.9;
         }
 
         .hero-section p {
@@ -151,7 +168,7 @@
             color: #cbd5e1;
         }
 
-        /* Grillas y Tarjetas (Formación y Profesores) */
+        /* Grillas y Tarjetas (Componentes en Azul Pizarra) */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -160,39 +177,42 @@
         }
 
         .card {
-            background-color: var(--white);
+            background-color: var(--card-bg);
+            color: var(--text-light);
             padding: 30px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
             border-top: 4px solid var(--accent-color);
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 230, 118, 0.1);
         }
 
         .card h3 {
-            color: var(--primary-color);
+            color: var(--text-light);
             margin-bottom: 10px;
         }
 
         .card p {
             font-size: 0.95rem;
             margin-bottom: 8px;
+            color: #cbd5e1;
         }
 
-        .card-teacher {
-            border-top: 4px solid #10b981;
+        .card strong {
+            color: var(--accent-color);
         }
 
-        .card-teacher .dept {
+        .card-teacher p.dept {
             font-style: italic;
-            color: #64748b;
+            color: var(--text-muted);
             margin-bottom: 15px;
         }
 
-        /* Sección de Compañeros (Botones) */
+        /* Sección de Compañeros (Botones con Verde Neón) */
         .grid-links {
             display: flex;
             flex-wrap: wrap;
@@ -202,7 +222,7 @@
         }
 
         .btn-peer {
-            background-color: var(--white);
+            background-color: transparent;
             color: var(--accent-color);
             padding: 15px 25px;
             text-decoration: none;
@@ -210,13 +230,13 @@
             font-weight: 600;
             border: 2px solid var(--accent-color);
             transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
         .btn-peer:hover {
             background-color: var(--accent-color);
-            color: var(--white);
+            color: var(--primary-bg); /* Texto oscuro para contrastar con el neón */
             transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 230, 118, 0.4);
         }
 
         /* Sección Contacto */
@@ -228,11 +248,15 @@
 
         .contact-info p {
             margin: 15px 0;
-            color: var(--text-color);
+            color: var(--text-light);
+        }
+
+        .contact-info strong {
+            color: var(--accent-color);
         }
 
         .contact-info a {
-            color: var(--accent-color);
+            color: var(--text-light);
             text-decoration: none;
             font-weight: 600;
             transition: color 0.2s;
@@ -240,17 +264,17 @@
 
         .contact-info a:hover {
             text-decoration: underline;
-            color: #2563eb;
+            color: var(--accent-color);
         }
 
         /* Footer */
         footer {
-            background-color: var(--primary-color);
-            color: #94a3b8;
+            background-color: var(--primary-bg);
+            color: var(--text-muted);
             text-align: center;
             padding: 20px;
             font-size: 0.9rem;
-            border-top: 1px solid #334155;
+            border-top: 1px solid var(--card-bg);
         }
 
         /* Animación básica */
@@ -282,7 +306,7 @@
 
     <!-- Encabezado / Barra de Navegación -->
     <header>
-        <div class="logo">Mi Portafolio</div>
+        <div class="logo">Mi <span>Portafolio</span></div>
         <nav>
             <ul>
                 <li><a href="#presentacion">Presentación</a></li>
@@ -304,7 +328,7 @@
     </section>
 
     <!-- Sección 2: Formación y Cursos -->
-    <section id="formacion" class="bg-light">
+    <section id="formacion" class="bg-light-section">
         <div class="container">
             <h2>Formación Académica y Cursos</h2>
             <div class="grid">
@@ -323,7 +347,7 @@
     </section>
 
     <!-- Sección 3: Profesores y Referencias -->
-    <section id="profesores">
+    <section id="profesores" class="bg-light-section">
         <div class="container">
             <h2>Profesores y Referencias</h2>
             <p class="subtitle">Docentes y mentores que guían mi camino académico:</p>
@@ -343,7 +367,7 @@
     </section>
 
     <!-- Sección 4: Páginas de Compañeros -->
-    <section id="companeros" class="bg-light">
+    <section id="companeros" class="bg-light-section">
         <div class="container">
             <h2>Mis Compañeros de Clase</h2>
             <p class="subtitle">Visita los portafolios y proyectos de mis colegas de la universidad:</p>
@@ -356,10 +380,10 @@
     </section>
 
     <!-- Sección 5: Contacto -->
-    <section id="contacto">
+    <section id="contacto" class="bg-dark-section">
         <div class="container">
             <h2>Contacto</h2>
-            <p class="subtitle">¿Quieres ponerte en contacto conmigo o revisar mis redes profesionales? Aquí tienes mis datos:</p>
+            <p class="subtitle" style="color: #cbd5e1;">¿Quieres ponerte en contacto conmigo o revisar mis redes profesionales? Aquí tienes mis datos:</p>
             <div class="contact-info">
                 <p>📧 <strong>Gmail:</strong> <a href="mailto:jafetsalinas1@gmail.com">jafetsalinas1@gmail.com</a></p>
                 <p>📱 <strong>Teléfono:</strong> <a href="https://wa.me/51978865092" target="_blank">+51 978 865 092</a></p>
