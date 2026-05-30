@@ -129,7 +129,7 @@
         }
 
         .hero-section h2.career::after {
-            display: none; /* Quita la línea decorativa de este h2 específico */
+            display: none;
         }
 
         .hero-section h2.career a {
@@ -183,7 +183,7 @@
         }
 
         .card-teacher {
-            border-top: 4px solid #10b981; /* Verde para diferenciar profesores */
+            border-top: 4px solid #10b981;
         }
 
         .card-teacher .dept {
@@ -227,12 +227,20 @@
         }
 
         .contact-info p {
-            margin: 10px 0;
+            margin: 15px 0;
+            color: var(--text-color);
         }
 
         .contact-info a {
             color: var(--accent-color);
             text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+            color: #2563eb;
         }
 
         /* Footer */
@@ -351,9 +359,11 @@
     <section id="contacto">
         <div class="container">
             <h2>Contacto</h2>
-            <p>¿Quieres ponerte en contacto conmigo? Puedes hacerlo a través de los siguientes canales:</p>
+            <p class="subtitle">¿Quieres ponerte en contacto conmigo o revisar mis redes profesionales? Aquí tienes mis datos:</p>
             <div class="contact-info">
-                <p>📧 <strong>Correo:</strong> tu.correo@email.com</p>
+                <p>📧 <strong>Gmail:</strong> <a href="mailto:jafetsalinas1@gmail.com">jafetsalinas1@gmail.com</a></p>
+                <p>📱 <strong>Teléfono:</strong> <a href="https://wa.me/51978865092" target="_blank">+51 978 865 092</a></p>
+                <p>💼 <strong>LinkedIn:</strong> <a href="#" id="linkedin-link" target="_blank">Mi Perfil de LinkedIn (Pendiente)</a></p>
                 <p>🐙 <strong>GitHub:</strong> <a href="https://github.com/tu-usuario" target="_blank">github.com/tu-usuario</a></p>
             </div>
         </div>
