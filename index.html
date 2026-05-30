@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio Personal</title>
+    <title>Portafolio - Jafet Fabian Salinas Alejandro</title>
     
     <style>
         /* Variables de Color y Estilos Globales */
@@ -118,14 +118,37 @@
 
         .hero-section h1 {
             font-size: 2.8rem;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+        }
+
+        .hero-section h2.career {
+            font-size: 1.5rem;
+            color: #94a3b8;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+
+        .hero-section h2.career::after {
+            display: none; /* Quita la línea decorativa de este h2 específico */
+        }
+
+        .hero-section h2.career a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .hero-section h2.career a:hover {
+            text-decoration: underline;
+            color: #60a5fa;
         }
 
         .hero-section p {
             font-size: 1.2rem;
             max-width: 800px;
             margin: 0 auto;
-            color: #94a3b8;
+            color: #cbd5e1;
         }
 
         /* Grillas y Tarjetas (Formación y Profesores) */
@@ -249,6 +272,7 @@
 </head>
 <body>
 
+    <!-- Encabezado / Barra de Navegación -->
     <header>
         <div class="logo">Mi Portafolio</div>
         <nav>
@@ -262,19 +286,22 @@
         </nav>
     </header>
 
+    <!-- Sección 1: Presentación -->
     <section id="presentacion" class="hero-section">
         <div class="container animate-fade">
-            <h1>¡Hola! Soy un Estudiante de Ciencias de la Computación</h1>
-            <p>Bienvenido a mi espacio web. Me apasiona la tecnología, la lógica, el desarrollo de software y la resolución de problemas complejos mediante el código.</p>
+            <h1>Jafet Fabian Salinas Alejandro</h1>
+            <h2 class="career">Estudiante de Ciencia de la Computación en la <a href="https://ucsp.edu.pe/" target="_blank">UCSP (Universidad Católica San Pablo)</a></h2>
+            <p>Bienvenido a mi espacio web. Me apasiona la tecnología, el desarrollo de software, la lógica algorítmica y la resolución de problemas complejos mediante el código.</p>
         </div>
     </section>
 
+    <!-- Sección 2: Formación y Cursos -->
     <section id="formacion" class="bg-light">
         <div class="container">
             <h2>Formación Académica y Cursos</h2>
             <div class="grid">
                 <div class="card">
-                    <h3>Pregrado en Ciencias de la Computación</h3>
+                    <h3>Pregrado en Ciencia de la Computación</h3>
                     <p><strong>Institución:</strong> Universidad Católica San Pablo</p>
                     <p>Enfoque en fundamentos de programación, estructuras de datos, álgebra y matemática discreta.</p>
                 </div>
@@ -287,6 +314,7 @@
         </div>
     </section>
 
+    <!-- Sección 3: Profesores y Referencias -->
     <section id="profesores">
         <div class="container">
             <h2>Profesores y Referencias</h2>
@@ -306,6 +334,7 @@
         </div>
     </section>
 
+    <!-- Sección 4: Páginas de Compañeros -->
     <section id="companeros" class="bg-light">
         <div class="container">
             <h2>Mis Compañeros de Clase</h2>
@@ -318,6 +347,7 @@
         </div>
     </section>
 
+    <!-- Sección 5: Contacto -->
     <section id="contacto">
         <div class="container">
             <h2>Contacto</h2>
@@ -329,6 +359,7 @@
         </div>
     </section>
 
+    <!-- Pie de Página -->
     <footer>
         <p>&copy; 2026 - Creado con HTML y CSS. Todos los derechos reservados.</p>
     </footer>
